@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CipherController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/putri', [CipherController::class, 'index']);
 Route::post('/putri/encrypt', [CipherController::class, 'encrypt']);
@@ -17,12 +18,10 @@ Route::post('/putri/encrypt', [CipherController::class, 'encrypt']);
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'prosesLogin']);
+
+Route::get('/dashboard', [AuthController::class, 'dashboard']);
+
+Route::get('/logout', [AuthController::class, 'logout']);
