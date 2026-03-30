@@ -5,50 +5,54 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<style>
+.card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+</style>
+
 </head>
 
-<body>
+<body class="bg-light">
 
-<nav class="navbar navbar-dark bg-dark">
-<div class="container-fluid">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
 
-<span class="navbar-brand">Dashboard</span>
+<a class="navbar-brand">My Dashboard</a>
 
 <a href="/logout" class="btn btn-danger">Logout</a>
 
 </div>
 </nav>
 
-<div class="container mt-4">
+<!-- CONTENT -->
+<div class="container mt-5">
 
-<h2>Welcome to Dashboard</h2>
+<h2 class="mb-4">Dashboard</h2>
 
-<div class="row mt-4">
-
-<div class="col-md-4">
-<div class="card shadow">
-<div class="card-body">
-<h5>Total User</h5>
-<h3>120</h3>
-</div>
-</div>
-</div>
+<div class="row">
 
 <div class="col-md-4">
-<div class="card shadow">
-<div class="card-body">
-<h5>Total Data</h5>
-<h3>85</h3>
-</div>
+<div class="card p-3">
+<h5>Users</h5>
+<h2>120</h2>
 </div>
 </div>
 
 <div class="col-md-4">
-<div class="card shadow">
-<div class="card-body">
+<div class="card p-3">
+<h5>Data</h5>
+<h2>85</h2>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
 <h5>Activity</h5>
-<h3>23</h3>
-</div>
+<h2>23</h2>
 </div>
 </div>
 
