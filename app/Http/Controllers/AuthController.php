@@ -11,18 +11,26 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
-
-    public function prosesLogin()
-    {
-        return redirect('/dashboard');
-    }
-
-    public function logout()
-    {
+ public function dashboard()
+{
+    if (!session('login')) {
         return redirect('/login');
     }
+
+    return view('dashboard');
+}
+
+   public function prosesLogin(Request $request)
+{
+    session(['login' => true]);
+
+    return redirect('/dashboard');
+}
+
+  public function logout()
+{
+    session()->forget('login');
+
+    return redirect('/login');
+}
 }

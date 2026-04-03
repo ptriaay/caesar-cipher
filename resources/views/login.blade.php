@@ -36,7 +36,7 @@ body{
 
 <div class="login-card">
 
-<h3 class="text-center mb-4">Welcome Back 👋</h3>
+<h3 class="text-center mb-4">Welcome Backkkkk 👋</h3>
 
 <form method="POST" action="/login">
 @csrf
