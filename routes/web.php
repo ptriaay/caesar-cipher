@@ -22,6 +22,7 @@ Route::post('/putri/encrypt', [CipherController::class, 'encrypt']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'prosesLogin']);
 
-Route::get('/dashboard', [AuthController::class, 'dashboard']);
+Route::get('/daftar_pengguna', [AuthController::class, 'dashboard']);
+Route::get('/daftar_pengguna', [AuthController::class, 'daftarPengguna']);
 
 Route::get('/logout', [AuthController::class, 'logout']);

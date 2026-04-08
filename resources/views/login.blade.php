@@ -41,12 +41,18 @@ body{
 <form method="POST" action="/login">
 @csrf
 
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
 <div class="mb-3">
-<input type="text" class="form-control" placeholder="Username">
+<input type="email" name="email" class="form-control" placeholder="Email">
 </div>
 
 <div class="mb-3">
-<input type="password" class="form-control" placeholder="Password">
+<input type="password" name="password" class="form-control" placeholder="Password">
 </div>
 
 <button class="btn btn-custom w-100">Login</button>
