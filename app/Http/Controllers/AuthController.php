@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pengguna;
 use Illuminate\Support\Facades\DB;
+
 
 class AuthController extends Controller
 {
@@ -25,13 +27,15 @@ class AuthController extends Controller
 
 public function prosesLogin(Request $request)
 {
+
     $email = $request->email;
     $password = $request->password;
 
-    $user = DB::table('pengguna')
-        ->where('email', $email)
-        ->where('password', $password)
-        ->first();
+    $users = Pengguna::all();
+
+    $user = $users->where('email', $email)
+                  ->where('password', $password)
+                  ->first();
 
     if ($user) {
         session(['login' => true]);
@@ -41,15 +45,6 @@ public function prosesLogin(Request $request)
     }
 }
 
-public function daftarPengguna()
-{
-    if (!session('login')) {
-    return redirect('/login');
-}
-    $users = DB::table('pengguna')->get();
-
-    return view('daftar_pengguna', compact('users'));
-}
 
   public function logout()
 {
